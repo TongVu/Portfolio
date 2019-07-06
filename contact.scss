@@ -70,6 +70,8 @@ header{
         transition: transform 0.3s;
         transform: translateY(100%);
         .nav-bar{
+            margin: 0;
+            padding: 0;     
             width: 90%;
             list-style-type: none;
             .item{
@@ -194,7 +196,6 @@ main{
                     box-shadow: 3px 3px 15px snow;
                 }
                 span{
-
                     color: gold;
                     &:hover{ color: lightskyblue;}
                 }
@@ -240,7 +241,8 @@ main{
             }
         }
         
-        .container{
+        .container{            
+            padding: 5rem 0;
             h1{
                 text-align: center;
             }
@@ -250,13 +252,15 @@ main{
             }
 
             .wrapper{
+                margin: 15px auto;
+                // width: 70vw;
                 flex-flow: row wrap;
                 .email,
                 .phone{
                     margin: 5px auto;
-                    text-align: center;
-                    
-                    width: 80vw;
+                    padding: 15px;
+                    width: 100%;          
+                    text-align: center;                 
                 }
             }
         }

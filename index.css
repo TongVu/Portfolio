@@ -108,6 +108,8 @@ header .right {
 }
 
 header .right .nav-bar {
+  margin: 0;
+  padding: 0;
   width: 90%;
   list-style-type: none;
 }

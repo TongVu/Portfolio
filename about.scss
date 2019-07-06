@@ -66,6 +66,8 @@ header{
         transition: transform 0.3s;
         transform: translateY(100%);
         .nav-bar{
+            margin: 0;
+            padding: 0;     
             width: 90%;
             list-style-type: none;
             .item{
