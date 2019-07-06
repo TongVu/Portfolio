@@ -1,0 +1,264 @@
+*{
+    box-sizing: border-box;
+}
+
+html,
+body{    
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    background-color: lightslategray;
+    background-image: url("./img/code.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-blend-mode: soft-light;
+}
+
+header{
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;    
+    .left{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+        padding: 0;
+
+        width: 50%;
+        height: 100%;
+        background-color: lightslategray;
+
+        transition: transform 0.3s;
+        transform: translateY(-100%);        
+        .avt{
+            text-align: center;
+            img{
+                width: 180px; 
+                height: 180px;
+                border: 3px solid snow; 
+                border-radius: 100%;
+            }
+        }        
+    }
+    .transform-down{ 
+        transition: transform 0.3s;       
+        transform: translateY(0%);
+    }
+
+    .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+        padding: 0;
+        width: 50%;
+        height: 100%;
+        
+        transition: transform 0.3s;
+        transform: translateY(100%);
+        .nav-bar{
+            width: 90%;
+            list-style-type: none;
+            .item{
+                margin: 15px auto;
+                padding: 0;
+                width: 80%;
+                text-align: center;
+                font-size: 18px;
+                border-radius: 4px;
+                box-shadow: 3px 3px 12px snow;
+                transition: transform 0.3s, background-color 0.3s;
+                &:hover{                    
+                    transform: translateY(-3px);
+                    background-color: lightslategray;
+                }
+                a{                    
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 15px;
+                    color: snow;
+                    text-decoration: none;                    
+                    &:hover{                        
+                        color: darkorange;
+                    }
+                }
+            }
+        }
+
+    }
+    .transform-up{
+        transition: transform 0.3s;
+        transform: translateY(0%);
+    }
+}
+.opac{
+    opacity: 1;    
+    z-index: 1;
+}
+
+main{
+    position: relative;
+    overflow: hidden;
+    .btn-menu{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        z-index: 1;
+
+        display: flex;
+        flex-flow: row wrap;        
+
+        width: 28px;
+        height: 14px;      
+
+        .line-top,
+        .line-middle,
+        .line-bottom{
+            margin: 2px auto;
+            width: 28px;
+            height: 4px;
+            
+            border-radius: 4px;
+            background-color: snow;
+            transition: transform 0.5s, background-color 0.5s;
+        }
+        
+        .line-top__active{
+            transform: translate(0px,8px) rotate(45deg);
+        }
+
+        .line-middle__active{
+            transform: rotate(135deg);
+            background-color: lightblue;                
+        }
+        .line-bottom__active{
+            transform:  translate(0px, -8px) rotate(-45deg);
+        }        
+    }
+
+    .container{
+        margin: 0;
+        padding: 120px 60px;
+        height: 100vh;
+        h1{            
+            margin: 0;
+            padding: 0;
+            color: snow;
+            text-align: center;
+            font-size: 60px;
+            .color{
+                color: gold;
+            }
+        }
+        p{  
+            text-align: center;
+            font-size: 24px;
+            color: snow;    
+        }
+
+        .wrapper{            
+            margin: 15px auto;
+            display: flex;
+            width: 80%;
+
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            justify-items: flex-start;
+
+            .email,
+            .phone{               
+                margin: 0;
+                padding: 15px; 
+                width: 40%;                               
+                color: snow;
+                border-radius: 4px;
+                border: 2px solid snow;    
+                box-shadow: 3px 3px 8px snow;            
+                transition: transform 0.3s, box-shadow;
+                &:hover{
+                    transform: translateY(-5px);
+                    box-shadow: 3px 3px 15px snow;
+                }
+                span{
+
+                    color: gold;
+                    &:hover{ color: lightskyblue;}
+                }
+            }                        
+        }
+    }
+}
+
+@media only screen and (max-width: 694px){
+    header{
+        flex-flow: row wrap;
+        .left{
+            width: 100%;
+            height: 35%;
+            transform: translateX(-100%);
+            .avt{            
+                width: 60%;  
+                img{
+                    width: 80%; 
+                    height: 80%;                    
+                }
+            }     
+        }
+        .transform-down{
+            transform: translateX(0%);
+        }
+
+        .right{
+            width: 100%;
+            height: 65%;
+            transform: translateX(100%);
+        }
+        .transform-up{
+            transform: translateX(0%);
+        }
+    }
+
+    main{
+        .btn-menu{
+            .line-middle__active{
+                transform: rotate(135deg);
+                background-color: lightslategray;                
+            }
+        }
+        
+        .container{
+            h1{
+                text-align: center;
+            }
+            p{
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .wrapper{
+                flex-flow: row wrap;
+                .email,
+                .phone{
+                    margin: 5px auto;
+                    text-align: center;
+                    
+                    width: 80vw;
+                }
+            }
+        }
+    }
+}
